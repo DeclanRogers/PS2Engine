@@ -95,9 +95,9 @@ static int tri[] = {
 qword_t *draw(qword_t *q)
 {
   
-  uint64_t red = 0xb8;
-  uint64_t blue = 0x83;
-  uint64_t green = 0xee;
+  uint64_t red = 0x27;
+  uint64_t blue = 0x02;
+  uint64_t green = 0x20;
 
   // SET PRIM
   q->dw[0] = 0x1000000000000001;
