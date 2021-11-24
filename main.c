@@ -99,9 +99,9 @@ qword_t *draw(qword_t *q, int R, int G, int B)
   uint64_t green = 0x00 + G;
   uint64_t blue = 0x00 + B;
 
-printf("Red" + R"\n");
-printf("Green" + G"\n");
-printf("blue"+ B"\n");
+printf("Red %d \n", R);
+printf("Green %d \n", G);
+printf("blue %d \n", B);
 
 
   // SET PRIM
@@ -170,7 +170,7 @@ int main()
     q = draw(q, R,G,B);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
-    print_buffer(buf, q-buf); 
+    //print_buffer(buf, q-buf); 
 
     draw_wait_finish();
     // wait for vsync
