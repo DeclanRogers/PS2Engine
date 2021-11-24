@@ -95,9 +95,9 @@ qword_t *draw(qword_t *q, int R, int G, int B)
   int green = G;
   int blue = B;
 
-printf("Red %d \n", red);
-printf("Green %d \n", green);
-printf("blue %d \n", blue);
+//printf("Red %d \n", red);
+//printf("Green %d \n", green);
+//printf("blue %d \n", blue);
 
 
   // SET PRIM
@@ -164,7 +164,7 @@ int main()
     int G = rand() % (99 + 1 - 0) + 0;
     int B = rand() % (99 + 1 - 0) + 0;
 
-printf("R: %d G: %d B: %d" , R, G, B);
+//printf("R: %d G: %d B: %d" , R, G, B);
     q = draw(q, R,G,B);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
@@ -172,7 +172,7 @@ printf("R: %d G: %d B: %d" , R, G, B);
 
    // draw_wait_finish();
     // wait for vsync
-    //graph_wait_vsync();
+    graph_wait_vsync();
     //sleep(2);
   }
 }
