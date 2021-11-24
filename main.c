@@ -170,10 +170,10 @@ printf("R: %d G: %d B: %d" , R, G, B);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
     //print_buffer(buf, q-buf); 
 
-    draw_wait_finish();
+   // draw_wait_finish();
     // wait for vsync
-    graph_wait_vsync();
-    sleep(2);
+    //graph_wait_vsync();
+    //sleep(2);
   }
 }
 
