@@ -64,7 +64,7 @@ int gs_init(int width, int height, int psm, int psmz, int vmode, int gmode)
 
   graph_set_mode(gmode, vmode, GRAPH_MODE_FIELD, GRAPH_DISABLE); 
   graph_set_screen(0, 0, width, height);
-  graph_set_bgcolor(0, 0, 0);
+  graph_set_bgcolor(44, 47, 51);
   graph_set_framebuffer_filtered(fb.address, width, psm, 0, 0);
   graph_enable_output();
 
