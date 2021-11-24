@@ -140,7 +140,7 @@ printf("blue %d \n", blue);
 int main()
 {
   printf("Hello\n");
-  time_t t
+  time_t t;
   srand((unsigned) time(&t));
   buf = malloc(DRAWBUF_LEN);
   z = malloc(sizeof(zbuffer_t));
@@ -164,7 +164,7 @@ int main()
     int G = rand() % (99 + 1 - 0) + 0;
     int B = rand() % (99 + 1 - 0) + 0;
 
-printf("R: %d G: %d B: %d" , R, G, B)
+printf("R: %d G: %d B: %d" , R, G, B);
     q = draw(q, R,G,B);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
