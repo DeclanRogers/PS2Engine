@@ -84,10 +84,6 @@ static int tri[] = {
   10, 10, 0,
   400, 10, 0,
   10, 400, 0,
-  
-  400, 10, 0,
-  500, 10, 0,
-  500, 400, 0,
 };
 
 #define SHIFT_AS_I64(x, b) (((int64_t)x)<<b)
@@ -95,9 +91,9 @@ static int tri[] = {
 qword_t *draw(qword_t *q, int R, int G, int B)
 {
   
-  uint64_t red = R;
-  uint64_t green = G;
-  uint64_t blue = B;
+  int red = R;
+  int green = G;
+  int blue = B;
 
 printf("Red %d \n", red);
 printf("Green %d \n", green);
