@@ -95,9 +95,9 @@ static int tri[] = {
 qword_t *draw(qword_t *q, int R, int G, int B)
 {
   
-  uint64_t red = rand() % (99 + 2 - 5) + 5;
-  uint64_t green = rand() % (99 + 2 - 5) + 15;
-  uint64_t blue = rand() % (99 + 2 - 5) + 5;
+  uint64_t red = R;
+  uint64_t green = G;
+  uint64_t blue = B;
 
 printf("Red %d \n", red);
 printf("Green %d \n", green);
@@ -144,7 +144,8 @@ printf("blue %d \n", blue);
 int main()
 {
   printf("Hello\n");
-  srand(time(NULL));
+  time_t t
+  srand((unsigned) time(&t));
   buf = malloc(DRAWBUF_LEN);
   z = malloc(sizeof(zbuffer_t));
   // init DMAC
@@ -167,7 +168,7 @@ int main()
     int G = rand() % (99 + 1 - 0) + 0;
     int B = rand() % (99 + 1 - 0) + 0;
 
-
+printf("R: %d G: %d B: %d" , R, G, B)
     q = draw(q, R,G,B);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
