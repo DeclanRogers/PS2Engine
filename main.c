@@ -99,6 +99,11 @@ qword_t *draw(qword_t *q, int R, int G, int B)
   uint64_t green = 0x00 + G;
   uint64_t blue = 0x00 + B;
 
+printf("Red" + R"\n");
+printf("Green" + G"\n");
+printf("blue"+ B"\n");
+
+
   // SET PRIM
   q->dw[0] = 0x1000000000000001;
   q->dw[1] = 0x000000000000000e;
@@ -157,7 +162,12 @@ int main()
     q = draw_disable_tests(q, 0, z);
     q = draw_clear(q, 0, 2048.0f - 320, 2048.0f - 244, VID_W, VID_H, 20, 20, 20);
     q = draw_enable_tests(q, 0, z);
-    q = draw(q, rand() % (99 + 1 - 0) + 0, rand() % (99 + 1 - 0) + 0, rand() % (99 + 1 - 0) + 0);
+    int R = rand() % (99 + 1 - 0) + 0;
+    int G = rand() % (99 + 1 - 0) + 0;
+    int B = rand() % (99 + 1 - 0) + 0;
+
+
+    q = draw(q, R,G,B);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
     print_buffer(buf, q-buf); 
