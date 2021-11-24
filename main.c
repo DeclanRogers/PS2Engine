@@ -92,12 +92,12 @@ static int tri[] = {
 
 #define SHIFT_AS_I64(x, b) (((int64_t)x)<<b)
 
-qword_t *draw(qword_t *q)
+qword_t *draw(qword_t *q, int R, int G, int B)
 {
   
-  uint64_t red = 0x27;
-  uint64_t blue = 0x02;
-  uint64_t green = 0x20;
+  uint64_t red = 0x00 + R;
+  uint64_t green = 0x00 + G;
+  uint64_t blue = 0x00 + B;
 
   // SET PRIM
   q->dw[0] = 0x1000000000000001;
@@ -157,7 +157,7 @@ int main()
     q = draw_disable_tests(q, 0, z);
     q = draw_clear(q, 0, 2048.0f - 320, 2048.0f - 244, VID_W, VID_H, 20, 20, 20);
     q = draw_enable_tests(q, 0, z);
-    q = draw(q);
+    q = draw(q, rand() % (99 + 1 - 0) + 0, rand() % (99 + 1 - 0) + 0, rand() % (99 + 1 - 0) + 0);
     q = draw_finish(q);
     dma_channel_send_normal(DMA_CHANNEL_GIF, buf, q-buf, 0, 0);
     print_buffer(buf, q-buf); 
