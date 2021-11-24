@@ -95,9 +95,9 @@ static int tri[] = {
 qword_t *draw(qword_t *q, int R, int G, int B)
 {
   
-  uint64_t red = rand() % (99 + 1 - 0) + 0;
-  uint64_t green = rand() % (20 + 1 - 0) + 0;
-  uint64_t blue = rand() % (10 + 1 - 0) + 0;
+  uint64_t red = rand() % (99 + 2 - 5) + 5;
+  uint64_t green = rand() % (20 + 2 - 5) + 15;
+  uint64_t blue = rand() % (10 + 2 - 5) + 5;
 
 printf("Red %d \n", red);
 printf("Green %d \n", green);
