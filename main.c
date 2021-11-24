@@ -144,6 +144,7 @@ printf("blue %d \n", B);
 int main()
 {
   printf("Hello\n");
+  srand(time(NULL));
   buf = malloc(DRAWBUF_LEN);
   z = malloc(sizeof(zbuffer_t));
   // init DMAC
