@@ -99,9 +99,9 @@ qword_t *draw(qword_t *q, int R, int G, int B)
   uint64_t green = rand() % (20 + 1 - 0) + 0;
   uint64_t blue = rand() % (10 + 1 - 0) + 0;
 
-printf("Red %d \n", R);
-printf("Green %d \n", G);
-printf("blue %d \n", B);
+printf("Red %d \n", red);
+printf("Green %d \n", green);
+printf("blue %d \n", blue);
 
 
   // SET PRIM
